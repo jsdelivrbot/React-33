@@ -25,7 +25,7 @@ describe('CommentBox', () => {
       component.find('textarea').simulate('change', 'new comment');
     });
 
-    it('shows that text in the text area', () => {
+    it('shows that text in the textarea', () => {
       expect(component.find('textarea')).to.have.value('new comment');
     });
 
