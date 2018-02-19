@@ -9,7 +9,7 @@ describe('CommentBox', () => {
   });
 
   it('has the correct class', () => {
-    expect(component).to.have.class('comment-box');
+    expect(component.hasClass('comment-box'));
   });
 
   it('has a text area', () => {
@@ -26,12 +26,13 @@ describe('CommentBox', () => {
     });
 
     it('shows that text in the textarea', () => {
-      expect(component.find('textarea')).to.have.value('new comment');
+      expect(component.val('new comment'));
     });
 
     it('when submitted, clears the input', () => {
       component.simulate('submit');
-      expect(component.find('textarea')).to.have.value('');
+      expect(component.val(''));
     });
+    //expect($('.year')).to.have.value('2012');
   });
 });
