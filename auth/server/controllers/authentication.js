@@ -8,7 +8,6 @@ exports.signup = function(req, res, next) {
     return res.status(422).send({ error: 'You must provide email and password' });
   }
   // See if a user with the given email exists
-  // See if a user with the given wmail exists
   User.findOne({ email: email }, function(err, existingUser) {
     if (err) { return next(err); }
 
