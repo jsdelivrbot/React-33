@@ -14,7 +14,6 @@ const renderInput = field => {
 
 class Signin extends Component {
   handleFormSubmit({ email, password }) {
-    console.log(email, password);
     // Need to do something to log user in
     this.props.signinUser({ email, password });
   }
