@@ -16,7 +16,7 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
-app.get('/', (req, res) => res.send('Hello World'));
+app.get('/', (req, res) => res.send('devConnector'));
 
 // Use Routes
 app.use('/api/users', users);
