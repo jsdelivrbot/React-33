@@ -12,8 +12,7 @@ const UserSchema = new Schema({
     required: true
   },
   password: {
-    type: String,
-    required: true
+    type: String
   },
   avatar: {
     type: String,
@@ -25,4 +24,4 @@ const UserSchema = new Schema({
   }
 });
 
-module.exports = User = mongoose.model('users', User);
+module.exports = User = mongoose.model('users', UserSchema);
