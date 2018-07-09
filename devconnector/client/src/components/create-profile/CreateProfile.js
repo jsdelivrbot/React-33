@@ -151,7 +151,7 @@ class CreateProfile extends Component {
                   value={this.state.handle}
                   onChange={this.onChange}
                   error={errors.handle}
-                  info="A unique handle for your profile URL. Your full name, company name, nickname, etc"
+                  info="A unique handle for your profile URL. Your full name, company name, nickname"
                 />
                 <SelectListGroup
                   placeholder="Status"
@@ -160,7 +160,7 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   options={options}
                   error={errors.status}
-                  info="Give us and idea of where you are at in your career"
+                  info="Give us an idea of where you are at in your career"
                 />
                 <TextFieldGroup
                   placeholder="Company"
@@ -171,12 +171,20 @@ class CreateProfile extends Component {
                   info="Could be your own company or one you work for"
                 />
                 <TextFieldGroup
+                  placeholder="Website"
+                  name="website"
+                  value={this.state.website}
+                  onChange={this.onChange}
+                  error={errors.website}
+                  info="Could be your own website or a company one"
+                />
+                <TextFieldGroup
                   placeholder="Location"
                   name="location"
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
-                  info="City or city & state suggested (eg. Austin, TX)"
+                  info="City or city & state suggested (eg. Boston, MA)"
                 />
                 <TextFieldGroup
                   placeholder="* Skills"
@@ -185,7 +193,7 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.skills}
                   info="Please use comma separated values (eg.
-                    HTML,CSS,JavaScript,PHP)"
+                    HTML,CSS,JavaScript,PHP"
                 />
                 <TextFieldGroup
                   placeholder="Github Username"
@@ -203,7 +211,6 @@ class CreateProfile extends Component {
                   error={errors.bio}
                   info="Tell us a little about yourself"
                 />
-
                 <div className="mb-3">
                   <button
                     type="button"
@@ -232,17 +239,14 @@ class CreateProfile extends Component {
     );
   }
 }
-
 CreateProfile.propTypes = {
   profile: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
-
 const mapStateToProps = state => ({
   profile: state.profile,
   errors: state.errors
 });
-
 export default connect(
   mapStateToProps,
   { createProfile }
