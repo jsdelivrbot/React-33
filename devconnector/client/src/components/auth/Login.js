@@ -9,7 +9,7 @@ class Login extends Component {
     super();
     this.state = {
       email: '',
-      passowrd: '',
+      password: '',
       errors: {}
     };
 
@@ -88,7 +88,7 @@ class Login extends Component {
   }
 }
 
-Login.propsTypes = {
+Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
@@ -99,4 +99,7 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { loginUser })(Login);
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Login);
